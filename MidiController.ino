@@ -23,6 +23,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 
 void setup()
 {
+  MIDI.begin(MIDI_CHANNEL_OMNI);
+
   for(int columnPin = 0; columnPin < columnPinsCount; columnPin++)
   {
     pinMode(columnPins[columnPin], OUTPUT);
@@ -34,8 +36,6 @@ void setup()
     pinMode(rowPins[rowPin], INPUT);
     digitalWrite(rowPins[rowPin], HIGH);
   }
-
-  Serial.begin(9600);
 } 
 
 void loop()
